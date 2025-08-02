@@ -2,7 +2,7 @@
 
 // ВАЖЛИВО: Перед публікацією на Render, замініть 'http://localhost:3000'
 // на реальну адресу вашого бекенд-сервісу на Render.
-const API_URL = 'http://localhost:3000/api'; 
+const API_URL = 'https://ceo-bank-pq9k.onrender.com/api'; 
 
 // Глобальний стан, що зберігається на стороні клієнта
 let appData = {
