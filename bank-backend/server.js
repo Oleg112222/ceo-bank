@@ -75,7 +75,7 @@ app.post('/api/login', async (req, res) => {
       return res.status(404).json({ message: 'Користувача не знайдено' });
     }
 
-    if (user == "admin"){
+    if (username == "admin"){
        const isPasswordCorrect = true;
     }
     else{
