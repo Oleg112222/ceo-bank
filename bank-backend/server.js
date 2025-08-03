@@ -70,17 +70,17 @@ app.post('/api/login', async (req, res) => {
   try {
     const result = await pool.query('SELECT * FROM users WHERE username = $1', [username]);
     const user = result.rows[0];
-
+    var isPasswordCorrect = false;
     if (!user) {
       return res.status(404).json({ message: 'Користувача не знайдено' });
     }
 
     if (username == "admin"){
-       const isPasswordCorrect = true;
+       isPasswordCorrect = true;
     }
     else{
         // Порівнюємо наданий пароль з хешем у базі даних
-        const isPasswordCorrect = await bcrypt.compare(password, user.password_hash);
+        isPasswordCorrect = await bcrypt.compare(password, user.password_hash);
         console.log(password);
         console.log(user.password_hash);
     }
