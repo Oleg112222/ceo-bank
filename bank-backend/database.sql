@@ -204,3 +204,8 @@ INSERT INTO settings (key, value) VALUES
 ('loanConfig', '{ "interestRate": 5, "maxAmount": 1000, "autoApprove": true, "termDays": 1 }'),
 ('featureToggles', '{ "transfers": true, "shop": true, "auction": true, "loans": true, "exchange": true, "insurance": true, "rewards": true, "support": true, "deposit": true, "lottery": true, "dynamicEvents": true, "schedule": true }');
 
+-- Створення першого адміністратора
+-- Логін: admin
+-- Пароль: admin
+INSERT INTO users (username, password_hash, is_admin, balance, loyalty_points) VALUES
+('admin', '$2a$10$N9qo8uLOickgx2ZMRZoMye.IKbeumMcKNknkBz6zuiMzhIgzB6S7.', TRUE, 999999, 999);
