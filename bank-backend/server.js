@@ -77,6 +77,8 @@ app.post('/api/login', async (req, res) => {
 
     // Порівнюємо наданий пароль з хешем у базі даних
     const isPasswordCorrect = await bcrypt.compare(password, user.password_hash);
+    console.log(password);
+    console.log(user.password_hash);
 
     if (!isPasswordCorrect) {
       return res.status(401).json({ message: 'Неправильний пароль' });
